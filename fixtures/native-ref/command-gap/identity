@@ -1,0 +1,32 @@
+# Identity manifest of the reference case. Content identities are BLAKE3
+# over the source embedded in the reference binaries; the runner pins the
+# binaries it runs.
+component = goal-client
+component_variant = old
+component_source_blake3 = 5c55532966a0490ac63c6e01025bd1f667fc6b615046b6fc7206a4b947c48a61
+adapter = rook-adapter-ref
+adapter_protocol = 1
+adapter_source_blake3 = fae1827efe77126c5458d74544494fd02034fd1765fed4926421a7288baeacab
+property = goal-response-timeout-cancel@1
+property_program = rook-property-ref
+property_input_schema = rook-property-input@1
+property_source_blake3 = 8f121646bb6f2025c487dcdd602435d4b771d55bd8dc8d884275bcad9323c2ff
+normalization = none@1
+normalization_program = rook-adapter-ref driver
+normalization_source_blake3 = c04eb33e7bfed5dc6bf30dcde010a57f99239d2953a783a733291255f4245f78
+starting_state = fresh
+starting_state_blake3 = af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262
+effect_record_order = after-transport
+endpoint.1 = component
+endpoint.2 = clock
+endpoint.3 = action_server
+endpoint.4 = command
+endpoint.5 = diagnostics
+channel.10 = goal_command input Message
+channel.11 = clock input Clock
+channel.12 = action_response input GoalResponse,Result,CancelResponse
+channel.20 = action_goal effect GoalSend
+channel.21 = action_cancel effect CancelSend
+channel.22 = status effect Status
+toolchain = rust 1.95 (workspace rust-version)
+executable = built from public source; no ROS, no plugins, no shared libraries beyond the Rust toolchain

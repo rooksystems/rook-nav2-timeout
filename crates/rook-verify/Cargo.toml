@@ -1,0 +1,20 @@
+[package]
+name = "rook-verify"
+default-run = "rook-verify"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+anyhow = "1"
+blake3 = "1"
+rook-host = { path = "../rook-host" }
+rook-native = { path = "../rook-native" }
+# The capsule manifest is SHA-256 (shasum -c compatible) and nothing else in
+# the tree computes SHA-256 in Rust.
+sha2 = "0.10"
+
+rook-adapter-ref = { path = "../rook-adapter-ref" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

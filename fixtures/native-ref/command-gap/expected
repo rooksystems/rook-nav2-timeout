@@ -1,0 +1,9 @@
+# Expected values for the command-gap reference scenario. Recorded from the old
+# component through the scripted environment in crates/rook-adapter-ref.
+raw_record_blake3 = dbf6088a74aad9c5c71f10265c3d7f42e7c95ba34b69489003215855afeb2eca
+effects_captured_blake3 = af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262
+trace_hash = 9f8d11da3529d8bed657abe57727f19d7dbcbc236a7253cc921cf9b35acfd4db
+run_hash = 6779e1f471efc4a4d68073b2376098eb84d1a4612dc407fe5278cb926e36475c
+output_digest = 0000000000000000000000000000000000000000000000000000000000000000
+grade = Inferred
+claim = measured

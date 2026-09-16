@@ -1,0 +1,9 @@
+# Expected values for the timeout reference scenario. Recorded from the old
+# component through the scripted environment in crates/rook-adapter-ref.
+raw_record_blake3 = 9114547d95c6f7cf48c93b3d09d5dd0daec0c68fd47e0210c97edf121eede0f3
+effects_captured_blake3 = 6c1a83dfeca4c59d9e5993e3d3589b7e5822bb01a1882427916f54f2206c3f33
+trace_hash = 8a1401cf00d9fa42f2d732aee35e902aab7da6abcf6326628848b765c9dbb4b3
+run_hash = 94b3b74651229cb2611d69844f3c9b03fbf48ad20769eeebcd9e4b681f3f6c02
+output_digest = 325e906eda602e216f4cd8013d7a0b350124645ddc365f38fc92ac9948c55ab6
+grade = Complete
+claim = measured

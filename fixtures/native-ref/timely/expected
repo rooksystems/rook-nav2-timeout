@@ -1,0 +1,9 @@
+# Expected values for the timely reference scenario. Recorded from the old
+# component through the scripted environment in crates/rook-adapter-ref.
+raw_record_blake3 = b9b80d26104e8d076090c5581d57789ba65ee487395becdf6bf89786c352ae27
+effects_captured_blake3 = 5ecdf0e5a18dd299d6a0b148ab1e30273b50a1ae6e57f06619ea4540308cf2e7
+trace_hash = f3457b8f8bff0928f421c244b8d2833d490473da0aea5419519fb7e9f967a09b
+run_hash = 1901c12b560a1ee8a18c21db3c2fcf7f261f4b179046b07a9580468eee1d9032
+output_digest = 3249101f34a9679a5103e1fa8818f7dcd2573183cfd4b9a491306543b8df0786
+grade = Complete
+claim = measured

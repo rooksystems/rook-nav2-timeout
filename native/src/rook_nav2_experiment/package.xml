@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>rook_nav2_experiment</name>
+  <version>0.1.0</version>
+  <description>Compile and control the upstream Nav2 action timeout paths.</description>
+  <maintainer email="saketh@rookreplay.com">Rook Systems</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_action</depend>
+  <depend>action_msgs</depend>
+  <depend>nav2_msgs</depend>
+  <depend>nlohmann-json-dev</depend>
+  <test_depend>rmw_fastrtps_cpp</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

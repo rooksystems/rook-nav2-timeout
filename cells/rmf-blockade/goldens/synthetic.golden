@@ -1,0 +1,6 @@
+# Golden outputs for `rook-host rmf` on the synthetic seven-robot scenario.
+# Established in ADR 0002. Changes only when a session is named this file
+# and told to (AGENTS.md hard rule 4).
+rmf_run_hash = cf761c7dafe77ca29fb8e29b8f18c248234b516385e5de9a87d5476e828c7a22
+rmf_output_digest = cebb8c7a3b1b68a21c7f70fb5a309b66b7ce4ebbd467d208e35d3094bc9713ba
+rmf_output_digest_min_conflict_angle_5deg = d9edfd1d173aac3c8324450efb5a05dd2f5150682724e81d1798b9a3de4096ea

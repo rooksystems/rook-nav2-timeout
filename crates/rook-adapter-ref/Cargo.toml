@@ -1,0 +1,14 @@
+[package]
+name = "rook-adapter-ref"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+anyhow = "1"
+blake3 = "1"
+rook-native = { path = "../rook-native" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"

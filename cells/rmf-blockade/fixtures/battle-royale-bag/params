@@ -1,0 +1,3 @@
+# Recorded configuration of the rmf_traffic_ros2 blockade node.
+# 15 degrees, the make_node override in the deployed 2.1.8 source.
+min_conflict_angle_radians = 0.2617993877991494

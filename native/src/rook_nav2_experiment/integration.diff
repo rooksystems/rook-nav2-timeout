@@ -1,0 +1,96 @@
+--- old.upstream.hpp
++++ old.hpp
+@@ -0,0 +1 @@
++// Rook modification: dependency access only; see integration.diff.
+@@ -25,4 +26 @@
+-#include "nav2_ros_common/node_utils.hpp"
+-#include "rclcpp_action/rclcpp_action.hpp"
+-#include "nav2_behavior_tree/bt_utils.hpp"
+-#include "nav2_behavior_tree/json_utils.hpp"
++#include "control.hpp"
+@@ -58 +56 @@
+-    node_ = config().blackboard->template get<nav2::LifecycleNode::SharedPtr>("node");
++    node_ = config().blackboard->template get<control::Node::SharedPtr>("node");
+@@ -77 +75 @@
+-    result_ = typename rclcpp_action::ClientGoalHandle<ActionT>::WrappedResult();
++    result_ = typename control::GoalHandle<ActionT>::WrappedResult();
+@@ -272 +270 @@
+-      result_ = typename rclcpp_action::ClientGoalHandle<ActionT>::WrappedResult();
++      result_ = typename control::GoalHandle<ActionT>::WrappedResult();
+@@ -447 +445 @@
+-    auto send_goal_options = typename nav2::ActionClient<ActionT>::SendGoalOptions();
++    auto send_goal_options = typename control::Client<ActionT>::SendGoalOptions();
+@@ -449 +447 @@
+-      [this](const typename rclcpp_action::ClientGoalHandle<ActionT>::WrappedResult & result) {
++      [this](const typename control::GoalHandle<ActionT>::WrappedResult & result) {
+@@ -468 +466 @@
+-      [this](typename rclcpp_action::ClientGoalHandle<ActionT>::SharedPtr,
++      [this](typename control::GoalHandle<ActionT>::SharedPtr,
+@@ -475 +473 @@
+-      std::shared_future<typename rclcpp_action::ClientGoalHandle<ActionT>::SharedPtr>>(
++      std::shared_future<typename control::GoalHandle<ActionT>::SharedPtr>>(
+@@ -530 +528 @@
+-  typename nav2::ActionClient<ActionT>::SharedPtr action_client_;
++  typename control::Client<ActionT>::SharedPtr action_client_;
+@@ -536,2 +534,2 @@
+-  typename rclcpp_action::ClientGoalHandle<ActionT>::SharedPtr goal_handle_;
+-  typename rclcpp_action::ClientGoalHandle<ActionT>::WrappedResult result_;
++  typename control::GoalHandle<ActionT>::SharedPtr goal_handle_;
++  typename control::GoalHandle<ActionT>::WrappedResult result_;
+@@ -543 +541 @@
+-  nav2::LifecycleNode::SharedPtr node_;
++  control::Node::SharedPtr node_;
+@@ -545 +543 @@
+-  rclcpp::executors::SingleThreadedExecutor callback_group_executor_;
++  control::Executor callback_group_executor_;
+@@ -561 +559 @@
+-  std::shared_ptr<std::shared_future<typename rclcpp_action::ClientGoalHandle<ActionT>::SharedPtr>>
++  std::shared_ptr<std::shared_future<typename control::GoalHandle<ActionT>::SharedPtr>>
+--- fixed.upstream.hpp
++++ fixed.hpp
+@@ -0,0 +1 @@
++// Rook modification: dependency access only; see integration.diff.
+@@ -25,4 +26 @@
+-#include "nav2_ros_common/node_utils.hpp"
+-#include "rclcpp_action/rclcpp_action.hpp"
+-#include "nav2_behavior_tree/bt_utils.hpp"
+-#include "nav2_behavior_tree/json_utils.hpp"
++#include "control.hpp"
+@@ -58 +56 @@
+-    node_ = config().blackboard->template get<nav2::LifecycleNode::SharedPtr>("node");
++    node_ = config().blackboard->template get<control::Node::SharedPtr>("node");
+@@ -77 +75 @@
+-    result_ = typename rclcpp_action::ClientGoalHandle<ActionT>::WrappedResult();
++    result_ = typename control::GoalHandle<ActionT>::WrappedResult();
+@@ -272 +270 @@
+-      result_ = typename rclcpp_action::ClientGoalHandle<ActionT>::WrappedResult();
++      result_ = typename control::GoalHandle<ActionT>::WrappedResult();
+@@ -459 +457 @@
+-    auto send_goal_options = typename nav2::ActionClient<ActionT>::SendGoalOptions();
++    auto send_goal_options = typename control::Client<ActionT>::SendGoalOptions();
+@@ -461 +459 @@
+-      [this](const typename rclcpp_action::ClientGoalHandle<ActionT>::WrappedResult & result) {
++      [this](const typename control::GoalHandle<ActionT>::WrappedResult & result) {
+@@ -480 +478 @@
+-      [this](typename rclcpp_action::ClientGoalHandle<ActionT>::SharedPtr,
++      [this](typename control::GoalHandle<ActionT>::SharedPtr,
+@@ -487 +485 @@
+-      std::shared_future<typename rclcpp_action::ClientGoalHandle<ActionT>::SharedPtr>>(
++      std::shared_future<typename control::GoalHandle<ActionT>::SharedPtr>>(
+@@ -541 +539 @@
+-  typename nav2::ActionClient<ActionT>::SharedPtr action_client_;
++  typename control::Client<ActionT>::SharedPtr action_client_;
+@@ -547,2 +545,2 @@
+-  typename rclcpp_action::ClientGoalHandle<ActionT>::SharedPtr goal_handle_;
+-  typename rclcpp_action::ClientGoalHandle<ActionT>::WrappedResult result_;
++  typename control::GoalHandle<ActionT>::SharedPtr goal_handle_;
++  typename control::GoalHandle<ActionT>::WrappedResult result_;
+@@ -554 +552 @@
+-  nav2::LifecycleNode::SharedPtr node_;
++  control::Node::SharedPtr node_;
+@@ -556 +554 @@
+-  rclcpp::executors::SingleThreadedExecutor callback_group_executor_;
++  control::Executor callback_group_executor_;
+@@ -572 +570 @@
+-  std::shared_ptr<std::shared_future<typename rclcpp_action::ClientGoalHandle<ActionT>::SharedPtr>>
++  std::shared_ptr<std::shared_future<typename control::GoalHandle<ActionT>::SharedPtr>>

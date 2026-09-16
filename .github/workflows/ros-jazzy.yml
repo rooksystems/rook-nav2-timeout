@@ -1,0 +1,43 @@
+name: ros-jazzy
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  native-jazzy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Run the documented first-time setup
+        run: ./run.sh
+      - name: Replay with networking disabled
+        run: ./replay.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nav2-replay
+          if-no-files-found: error
+          path: |
+            native/build/rook_nav2_experiment/nav2-replay.tar.gz
+            native/build/rook_nav2_experiment/nav2-replay.sha256
+            native/build/rook_nav2_experiment/replay-offline.sh
+            native/build/rook_nav2_experiment/evidence/
+            native/build/rook_nav2_experiment/integrated/*.json
+  nav2-offline-replay:
+    needs: native-jazzy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: nav2-replay
+          path: bundle
+      - name: Replay retained evidence on a fresh machine
+        run: |
+          docker pull ros@sha256:2589a8fba5257307857890173c069852c2abf913a0be7970f172478baecb09e4
+          docker run --rm --pull never --network none --platform linux/amd64 \
+            -v "$PWD/bundle":/bundle:ro \
+            ros@sha256:2589a8fba5257307857890173c069852c2abf913a0be7970f172478baecb09e4 \
+            bash /bundle/replay-offline.sh

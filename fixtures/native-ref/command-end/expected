@@ -1,0 +1,9 @@
+# Expected values for the command-end reference scenario. Recorded from the old
+# component through the scripted environment in crates/rook-adapter-ref.
+raw_record_blake3 = 9ab0614e9df61d543bef92752af0982ae4aba49b2fc496258735191a9be46920
+effects_captured_blake3 = af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262
+trace_hash = bd34f02183e9d49df9884a2ffca7ca0778be90808da9d254d7b0fe6b5435e92b
+run_hash = 9d639a9b4a6ec70708f88fa8ed00fc8d7973a4a9f636938e79b46422095a18a4
+output_digest = 0000000000000000000000000000000000000000000000000000000000000000
+grade = Complete
+claim = measured

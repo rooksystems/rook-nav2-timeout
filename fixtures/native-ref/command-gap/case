@@ -1,0 +1,10 @@
+# The case: what was recorded, what the property asks, where it ends.
+corpus = adapter-ref@1
+scenario = command-gap
+property = goal-response-timeout-cancel@1
+scope.completion = cancel_request_issued
+scope.observation_end = end_of_recording
+comparison_policy = raw-bytes-in-order@1
+goal_response_deadline_ns = 1000000000
+grade_reason = the recorder lost events right after the goal command; the component's first clock read was never recorded
+origin = scripted reference environment, not a field recording

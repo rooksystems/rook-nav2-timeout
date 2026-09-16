@@ -1,0 +1,6 @@
+# Expected results for rook-verify on this capsule. From
+# cells/rmf-blockade/goldens/battle-royale-holdout.golden (ADR 0005).
+bag_run_hash = 99ba8401de4a3aee378e336b6152c8a279fd645a2372d3f197170f86d72ec4e5
+bag_output_digest = 8265ec615fe456a718d18ffeb8018dde931ec1044f4df2b33dc594cae22aad22
+recorded_states = 672
+heartbeats_recorded_sha256 = 4a417815a8131f5d7dd9ff4ec35f32c27760f04fccf47290eb397fb57e24fcb9

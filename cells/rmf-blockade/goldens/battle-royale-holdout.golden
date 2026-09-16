@@ -1,0 +1,16 @@
+# Golden outputs for `rook-host rmf-bag` on the battle-royale holdout fixture.
+# Established for ADR 0005 from the one cold post-freeze holdout replay. LCS
+# values include the shared initial empty state. Changes only when a session is
+# named this file and told to (AGENTS.md hard rule 4).
+bag_output_digest = 8265ec615fe456a718d18ffeb8018dde931ec1044f4df2b33dc594cae22aad22
+bag_run_hash = 99ba8401de4a3aee378e336b6152c8a279fd645a2372d3f197170f86d72ec4e5
+p1_cancels_moved = 6
+p1_lcs = 672
+p1_output_digest = bf8f2a20b2197c765b8f2870da44132b3e55a5d6cb04ee4643f070b040a03c00
+p1_per_participant_lcs = 641
+p1_per_participant_total = 641
+raw_lcs = 672
+recorded_states = 672
+replay_states = 672
+replay_heartbeats = 1495
+heartbeats_identical = 1

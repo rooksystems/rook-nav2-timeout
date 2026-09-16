@@ -1,0 +1,22 @@
+[workspace]
+members = [
+    "cells/echo-count",
+    "crates/rook-core",
+    "crates/rook-core-wasm",
+    "crates/rook-host",
+    "crates/rook-native",
+    "crates/rook-adapter-ref",
+    "crates/rook-verify",
+]
+resolver = "3"
+
+[workspace.package]
+edition = "2024"
+license = "Apache-2.0"
+rust-version = "1.95"
+
+[profile.dev]
+overflow-checks = true
+
+[profile.release]
+overflow-checks = true

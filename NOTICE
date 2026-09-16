@@ -1,0 +1,62 @@
+Rook
+Copyright 2026 Rook Systems, Inc.
+
+Licensed under the Apache License, Version 2.0 (LICENSE).
+
+This repository and the binaries built from it include software from third
+parties. The upstream notices are preserved as follows.
+
+Open-RMF rmf_traffic and rmf_utils
+  Copyright (C) 2019-2020 Open Source Robotics Foundation
+  Apache License 2.0. Unmodified copies of the blockade moderator sources and
+  two rmf_utils headers are under cells/rmf-blockade/vendor/, each listed
+  with its upstream commit and git blob id in
+  cells/rmf-blockade/vendor/UPSTREAM.md. They are compiled into
+  cells/rmf-blockade/prebuilt/rmf_blockade_cell.wasm and its copy in
+  capsules/rmf-blockade-holdout/. rmf_utils/impl_ptr.hpp also carries
+  code by Andrey Upadyshev under the Boost Software License 1.0; the
+  notice is in the file.
+
+Open-RMF rmf_ros2, rmf_traffic_ros2 blockade node
+  Copyright (C) 2020 Open Source Robotics Foundation
+  Apache License 2.0. Pristine copies of four files from tag 2.1.8 are under
+  cells/rmf-blockade/tap/upstream/. Modified copies, with recorder calls
+  added, are under cells/rmf-blockade/tap/; the whole change is
+  cells/rmf-blockade/tap/tap.patch and the provenance is
+  cells/rmf-blockade/tap/UPSTREAM.md.
+
+The prebuilt cell rmf_blockade_cell.wasm also contains compiled code from
+libraries that are not vendored here. cells/rmf-blockade/build.sh names the
+toolchain and cells/rmf-blockade/prebuilt/THIRD-PARTY.md carries the full
+text of every license below.
+
+  Eigen 5.0.1
+    Mozilla Public License 2.0, with some files under BSD-3-Clause,
+    Apache-2.0 and the Minpack license (Eigen's COPYING.README). Used
+    unmodified as headers. Source: https://gitlab.com/libeigen/eigen
+  wasi-sdk 33.0
+    LLVM libc++, libc++abi and libunwind, Apache License 2.0 with LLVM
+    exceptions. wasi-libc, including musl-derived and cloudlibc code, under
+    MIT, BSD-2-Clause and Apache License 2.0 with LLVM exceptions.
+    Source: https://github.com/WebAssembly/wasi-sdk/releases/tag/wasi-sdk-33
+
+Rust crates statically linked into rook-verify, rook-host and the other
+workspace binaries are listed with their licenses in THIRD-PARTY.md, which
+tools/third_party.py generates from Cargo.lock.
+
+Navigation2 BtActionNode
+  Copyright (c) 2018 Intel Corporation
+  Apache License 2.0. The build fetches two identified upstream headers,
+  preserves their notices, and adds a modification notice describing
+  dependency substitutions. See native/src/rook_nav2_experiment/README.md
+  and integration.diff for revisions, hashes, and modifications.
+
+BehaviorTree.CPP 4.9.0
+  MIT License. The build fetches revision
+  3ff6a32ba0497a08519c77a1436e3b81eff1bcd6 and retains its license and the
+  licenses of bundled dependencies in the offline replay archive.
+
+ROS and Ubuntu dependencies
+  Distributed package archives retain their installed copyright and
+  license files. Installed versions and changed package archives are
+  retained with each offline replay bundle.

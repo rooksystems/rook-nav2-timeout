@@ -1,0 +1,127 @@
+name: gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  gate-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assert architecture
+        run: test "$(uname -m)" = x86_64
+
+      - uses: actions/checkout@v5
+
+      - uses: dtolnay/rust-toolchain@6c977a6ca4077a0ceb28ffbe03f59d46e9ac8772 # master, reviewed 2026-08-20
+        with:
+          toolchain: 1.95.0
+          targets: wasm32-unknown-unknown
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
+
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: just
+
+      - name: Run gate
+        run: just gate
+
+      - name: Verify capsule
+        shell: bash
+        run: just verify-capsule | tee verify-output.txt
+
+      - name: Extract hashes
+        shell: bash
+        run: |
+          grep -E '^bag_(run_hash|output_digest)=' verify-output.txt | sort > hashes-linux.txt
+          test "$(wc -l < hashes-linux.txt)" -eq 2
+          cat hashes-linux.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rook-verify-linux-x86_64
+          path: target/release/rook-verify
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hashes-linux
+          path: hashes-linux.txt
+          if-no-files-found: error
+
+  gate-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Assert architecture
+        run: test "$(uname -m)" = arm64
+
+      - uses: actions/checkout@v5
+
+      - uses: dtolnay/rust-toolchain@6c977a6ca4077a0ceb28ffbe03f59d46e9ac8772 # master, reviewed 2026-08-20
+        with:
+          toolchain: 1.95.0
+          targets: wasm32-unknown-unknown
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
+
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: just
+
+      - name: Run gate
+        run: just gate
+
+      - name: Verify capsule
+        shell: bash
+        run: just verify-capsule | tee verify-output.txt
+
+      - name: Extract hashes
+        shell: bash
+        run: |
+          grep -E '^bag_(run_hash|output_digest)=' verify-output.txt | sort > hashes-macos.txt
+          test "$(wc -l < hashes-macos.txt)" -eq 2
+          cat hashes-macos.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rook-verify-macos-arm64
+          path: target/release/rook-verify
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hashes-macos
+          path: hashes-macos.txt
+          if-no-files-found: error
+
+  # Both architectures must produce identical bag_run_hash and
+  # bag_output_digest, or the capsule replay is not deterministic.
+  cross-arch:
+    needs: [gate-linux, gate-macos]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: hashes-linux
+          path: linux
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: hashes-macos
+          path: macos
+
+      - name: Compare hashes across architectures
+        shell: bash
+        run: |
+          echo "linux:"
+          cat linux/hashes-linux.txt
+          echo "macos:"
+          cat macos/hashes-macos.txt
+          diff linux/hashes-linux.txt macos/hashes-macos.txt

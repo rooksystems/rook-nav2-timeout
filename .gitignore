@@ -1,0 +1,7 @@
+/target
+/native/build/
+/native/install/
+/native/log/
+/bundle/
+__pycache__/
+.DS_Store

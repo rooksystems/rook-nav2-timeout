@@ -1,0 +1,16 @@
+# Golden outputs for `rook-host rmf-bag` on the battle-royale tap fixture.
+# Established in ADR 0004. LCS values include the shared initial empty
+# state. Changes only when a session is named this file and told to
+# (AGENTS.md hard rule 4).
+bag_run_hash = b939a1bbd3a348d733978dd83440ea85b7798d2edfc4c6156d1405feb4b30149
+bag_output_digest = eb7735f4b442211c83d1698b60dabaf6243fbfb12ff6c79ae8a4fc6c76b03d56
+recorded_states = 912
+raw_lcs = 907
+p1_cancels_moved = 21
+p1_output_digest = a694801a1b29a0f77a688fac5dd7b7d4dd0e24f9695f696b7f50e5925e11b824
+p1_lcs = 905
+p1_per_participant_lcs = 866
+p1_per_participant_total = 867
+replay_states = 907
+replay_heartbeats = 906
+heartbeats_identical = 0
