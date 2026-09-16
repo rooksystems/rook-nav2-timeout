@@ -3,7 +3,7 @@
 <desc id="desc">Both builds submit a goal. With no acknowledgment at 20 milliseconds of scripted ROS time, event 18 differs. The old build returns FAILURE without cancellation and fails the check. The fixed build emits CancelSend and passes the check; its cancellation response is still pending. Baseline effects were reproduced on the tested Linux build. Server acknowledgment and goal termination remain unknown.</desc>
 <style>
   .paper { fill: #fafaf7; } .ink { fill: #1b1a17; } .body { fill: #4a4842; }
-  .muted { fill: #6e6b62; } .accent { fill: #d93f00; } .cell { fill: #ff4f00; }
+  .muted { fill: #6e6b62; } .accent { fill: #c73708; } .cell { fill: #ff4f00; }
   .rule { stroke: #e0ddd3; } .trace { stroke: #a29e93; }
   @media (prefers-color-scheme: dark) {
     .paper { fill: #121214; } .ink { fill: #eceae4; } .body { fill: #bab6ad; }
