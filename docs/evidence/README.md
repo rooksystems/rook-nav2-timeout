@@ -2,7 +2,9 @@
 
 These files were copied without modification from the `nav2-replay` artifact produced by [CI run 35153353742](https://github.com/rooksystems/rook-nav2-timeout/actions/runs/35153353742) on September 16, 2026. They contain synthetic, scripted inputs and results from the demonstration. [The walkthrough](../result.md) explains what they show.
 
-The run built repository commit [`2bf22b66da07d8fa945641bc1eef6a7588d9bd10`](https://github.com/rooksystems/rook-nav2-timeout/commit/2bf22b66da07d8fa945641bc1eef6a7588d9bd10) on Linux x86_64, inside ROS 2 Jazzy image `ros@sha256:2589a8fba5257307857890173c069852c2abf913a0be7970f172478baecb09e4`. The original replay archive's SHA-256 is `db9256e2ed8e84bdb37d6f61869e0dcb6ef5f6e3a44226f9ab9cb1b9b7c7b6ff`.
+The run built repository commit [`2bf22b66da07d8fa945641bc1eef6a7588d9bd10`](https://github.com/rooksystems/rook-nav2-timeout/commit/2bf22b66da07d8fa945641bc1eef6a7588d9bd10) on Linux x86_64, inside ROS 2 Jazzy image `ros@sha256:2589a8fba5257307857890173c069852c2abf913a0be7970f172478baecb09e4`.
+
+The SHA-256 of `nav2-replay.tar.gz` is `db9256e2ed8e84bdb37d6f61869e0dcb6ef5f6e3a44226f9ab9cb1b9b7c7b6ff`. That archive and its checksum file, `nav2-replay.sha256`, are at the root of the downloaded `nav2-replay` artifact. The digest covers the `.tar.gz` file bytes, not the ZIP wrapper downloaded from GitHub. After extracting the artifact, run `sha256sum -c nav2-replay.sha256` from its root to check the archive.
 
 The run passed all 28 expected candidate statuses and replayed the retained bundle on a separate machine with networking disabled. These results describe that source and build. They do not establish that a newer build produces identical binaries, or that a field incident occurred.
 

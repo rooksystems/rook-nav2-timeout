@@ -4,7 +4,9 @@ Start with the [recorded timeout result](result.md). The files below produce tha
 
 ## 1. Supply the failing inputs
 
-[`capture.py`](../native/src/rook_nav2_experiment/capture.py) starts the old component, submits a goal, and supplies commands and clock observations. Its `timeout` scenario withholds the acknowledgment and advances ROS time to the 20 ms deadline. It captures the component's effects directly, independently of the later replay comparison and behavioral check.
+[`capture.py`](../native/src/rook_nav2_experiment/capture.py) starts the old component, submits a goal, and supplies commands and clock observations. It captures the component's effects directly, independently of the later replay comparison and behavioral check.
+
+The `timeout` scenario withholds the acknowledgment and advances both supplied clocks. ROS time reaches the overall 20 ms goal-response deadline. The controlled executor uses steady time for its shorter `spin_until_future_complete` waits; those waits expire at supplied steady-clock readings of 5 and 10 ms.
 
 [`component.cpp`](../native/src/rook_nav2_experiment/component.cpp) wraps the compiled upstream class in a process that accepts these commands. [`control.hpp`](../native/src/rook_nav2_experiment/control.hpp) provides the controllable action client, executor, and clocks. This substitution is what lets the script choose callback delivery and clock observations.
 
