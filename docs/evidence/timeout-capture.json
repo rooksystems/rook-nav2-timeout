@@ -1,0 +1,558 @@
+{
+  "scenario": "timeout",
+  "frames": [
+    {
+      "ordinal": 1,
+      "src_actor": 0,
+      "dst_actor": 1,
+      "channel_id": 0,
+      "src_seq": 0,
+      "event_type": "StartingState",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "0100af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262"
+    },
+    {
+      "ordinal": 2,
+      "src_actor": 4,
+      "dst_actor": 1,
+      "channel_id": 10,
+      "src_seq": 0,
+      "event_type": "Message",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "02007b226f7065726174696f6e223a227469636b222c2274696d655f6e73223a307d"
+    },
+    {
+      "ordinal": 3,
+      "src_actor": 1,
+      "dst_actor": 3,
+      "channel_id": 20,
+      "src_seq": 0,
+      "event_type": "GoalSend",
+      "schema": 1,
+      "flags": 1,
+      "body_hex": "470000000000000000000000000000b80000000000000000"
+    },
+    {
+      "ordinal": 4,
+      "src_actor": 2,
+      "dst_actor": 1,
+      "channel_id": 11,
+      "src_seq": 0,
+      "event_type": "Clock",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "010000000000000000000200000000000000"
+    },
+    {
+      "ordinal": 5,
+      "src_actor": 2,
+      "dst_actor": 1,
+      "channel_id": 11,
+      "src_seq": 1,
+      "event_type": "Clock",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "010000000000000000000200000000000000"
+    },
+    {
+      "ordinal": 6,
+      "src_actor": 2,
+      "dst_actor": 1,
+      "channel_id": 11,
+      "src_seq": 2,
+      "event_type": "Clock",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "020000000000000000000200000000000000"
+    },
+    {
+      "ordinal": 7,
+      "src_actor": 4,
+      "dst_actor": 1,
+      "channel_id": 10,
+      "src_seq": 1,
+      "event_type": "Message",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "02007b226f7065726174696f6e223a2277616b65222c2274696d655f6e73223a307d"
+    },
+    {
+      "ordinal": 8,
+      "src_actor": 2,
+      "dst_actor": 1,
+      "channel_id": 11,
+      "src_seq": 3,
+      "event_type": "Clock",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "0200404b4c00000000000200000000000000"
+    },
+    {
+      "ordinal": 9,
+      "src_actor": 1,
+      "dst_actor": 5,
+      "channel_id": 22,
+      "src_seq": 0,
+      "event_type": "Status",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "52554e4e494e47"
+    },
+    {
+      "ordinal": 10,
+      "src_actor": 4,
+      "dst_actor": 1,
+      "channel_id": 10,
+      "src_seq": 2,
+      "event_type": "Message",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "02007b226f7065726174696f6e223a227469636b222c2274696d655f6e73223a31303030303030307d"
+    },
+    {
+      "ordinal": 11,
+      "src_actor": 2,
+      "dst_actor": 1,
+      "channel_id": 11,
+      "src_seq": 4,
+      "event_type": "Clock",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "010080969800000000000a00000000000000"
+    },
+    {
+      "ordinal": 12,
+      "src_actor": 2,
+      "dst_actor": 1,
+      "channel_id": 11,
+      "src_seq": 5,
+      "event_type": "Clock",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "0200404b4c00000000000a00000000000000"
+    },
+    {
+      "ordinal": 13,
+      "src_actor": 4,
+      "dst_actor": 1,
+      "channel_id": 10,
+      "src_seq": 3,
+      "event_type": "Message",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "02007b226f7065726174696f6e223a2277616b65222c2274696d655f6e73223a307d"
+    },
+    {
+      "ordinal": 14,
+      "src_actor": 2,
+      "dst_actor": 1,
+      "channel_id": 11,
+      "src_seq": 6,
+      "event_type": "Clock",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "020080969800000000000a00000000000000"
+    },
+    {
+      "ordinal": 15,
+      "src_actor": 1,
+      "dst_actor": 5,
+      "channel_id": 22,
+      "src_seq": 1,
+      "event_type": "Status",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "52554e4e494e47"
+    },
+    {
+      "ordinal": 16,
+      "src_actor": 4,
+      "dst_actor": 1,
+      "channel_id": 10,
+      "src_seq": 4,
+      "event_type": "Message",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "02007b226f7065726174696f6e223a227469636b222c2274696d655f6e73223a32303030303030307d"
+    },
+    {
+      "ordinal": 17,
+      "src_actor": 2,
+      "dst_actor": 1,
+      "channel_id": 11,
+      "src_seq": 7,
+      "event_type": "Clock",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "0100002d3101000000001000000000000000"
+    },
+    {
+      "ordinal": 18,
+      "src_actor": 1,
+      "dst_actor": 5,
+      "channel_id": 22,
+      "src_seq": 2,
+      "event_type": "Status",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "4641494c555245"
+    }
+  ],
+  "captured": [
+    {
+      "ordinal": 3,
+      "src_actor": 1,
+      "dst_actor": 3,
+      "channel_id": 20,
+      "src_seq": 0,
+      "event_type": "GoalSend",
+      "schema": 1,
+      "flags": 1,
+      "body_hex": "470000000000000000000000000000b80000000000000000"
+    },
+    {
+      "ordinal": 9,
+      "src_actor": 1,
+      "dst_actor": 5,
+      "channel_id": 22,
+      "src_seq": 0,
+      "event_type": "Status",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "52554e4e494e47"
+    },
+    {
+      "ordinal": 15,
+      "src_actor": 1,
+      "dst_actor": 5,
+      "channel_id": 22,
+      "src_seq": 1,
+      "event_type": "Status",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "52554e4e494e47"
+    },
+    {
+      "ordinal": 18,
+      "src_actor": 1,
+      "dst_actor": 5,
+      "channel_id": 22,
+      "src_seq": 2,
+      "event_type": "Status",
+      "schema": 1,
+      "flags": 0,
+      "body_hex": "4641494c555245"
+    }
+  ],
+  "transcript": [
+    {
+      "request": {
+        "operation": "start",
+        "ids": [
+          [
+            71,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            184
+          ],
+          [
+            19,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            236
+          ],
+          [
+            203,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            52
+          ]
+        ]
+      },
+      "response": {
+        "effects": [],
+        "evidence": [],
+        "future": "",
+        "variant": "old",
+        "waiting": 0
+      }
+    },
+    {
+      "request": {
+        "operation": "tick"
+      },
+      "response": {
+        "effects": [
+          {
+            "id": [
+              71,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              184
+            ],
+            "name": "goal",
+            "payload": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "evidence": [],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 1
+      }
+    },
+    {
+      "request": {
+        "operation": "clock",
+        "clock": 1,
+        "value": 0
+      },
+      "response": {
+        "effects": [],
+        "evidence": [
+          "ros=0"
+        ],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 1
+      }
+    },
+    {
+      "request": {
+        "operation": "clock",
+        "clock": 1,
+        "value": 0
+      },
+      "response": {
+        "effects": [],
+        "evidence": [
+          "ros=0"
+        ],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 2
+      }
+    },
+    {
+      "request": {
+        "operation": "clock",
+        "clock": 2,
+        "value": 0
+      },
+      "response": {
+        "effects": [],
+        "evidence": [
+          "steady=0",
+          "wait_deadline=5000000"
+        ],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 3
+      }
+    },
+    {
+      "request": {
+        "operation": "wake"
+      },
+      "response": {
+        "effects": [],
+        "evidence": [],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 2
+      }
+    },
+    {
+      "request": {
+        "operation": "clock",
+        "clock": 2,
+        "value": 5000000
+      },
+      "response": {
+        "effects": [],
+        "evidence": [
+          "steady=5000000",
+          "wait_expired=goal_response",
+          "status=RUNNING"
+        ],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 4
+      }
+    },
+    {
+      "request": {
+        "operation": "tick"
+      },
+      "response": {
+        "effects": [],
+        "evidence": [],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 1
+      }
+    },
+    {
+      "request": {
+        "operation": "clock",
+        "clock": 1,
+        "value": 10000000
+      },
+      "response": {
+        "effects": [],
+        "evidence": [
+          "ros=10000000"
+        ],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 2
+      }
+    },
+    {
+      "request": {
+        "operation": "clock",
+        "clock": 2,
+        "value": 5000000
+      },
+      "response": {
+        "effects": [],
+        "evidence": [
+          "steady=5000000",
+          "wait_deadline=10000000"
+        ],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 3
+      }
+    },
+    {
+      "request": {
+        "operation": "wake"
+      },
+      "response": {
+        "effects": [],
+        "evidence": [],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 2
+      }
+    },
+    {
+      "request": {
+        "operation": "clock",
+        "clock": 2,
+        "value": 10000000
+      },
+      "response": {
+        "effects": [],
+        "evidence": [
+          "steady=10000000",
+          "wait_expired=goal_response",
+          "status=RUNNING"
+        ],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 4
+      }
+    },
+    {
+      "request": {
+        "operation": "tick"
+      },
+      "response": {
+        "effects": [],
+        "evidence": [],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 1
+      }
+    },
+    {
+      "request": {
+        "operation": "clock",
+        "clock": 1,
+        "value": 20000000
+      },
+      "response": {
+        "effects": [],
+        "evidence": [
+          "ros=20000000",
+          "status=FAILURE"
+        ],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 4
+      }
+    },
+    {
+      "request": {
+        "operation": "finish"
+      },
+      "response": {
+        "effects": [],
+        "evidence": [],
+        "future": "goal_response",
+        "variant": "old",
+        "waiting": 4
+      }
+    }
+  ]
+}

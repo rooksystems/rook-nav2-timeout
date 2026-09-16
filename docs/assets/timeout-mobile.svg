@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="510" viewBox="0 0 360 510" role="img" aria-labelledby="title desc">
+  <title id="title">The cancellation request added by the Nav2 fix</title>
+  <desc id="desc">A goal is submitted. At 20 milliseconds of scripted ROS time, no acknowledgment has arrived. The old build returns FAILURE without cancellation. The fixed build requests cancellation and waits for the response. The check fails for the old build and passes for the fixed build. Server acknowledgment and goal termination remain unknown.</desc>
+  <rect width="360" height="510" rx="10" fill="#f6f8fa"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#1f2328">
+    <text x="20" y="27" font-size="16" font-weight="600">No acknowledgment by the deadline</text>
+    <text x="20" y="49" font-size="15" fill="#59636e">20 ms of scripted ROS time</text>
+    <rect x="12" y="68" width="336" height="170" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="28" y="99" font-size="19" font-weight="600">Before the fix</text>
+    <path d="M28 114H332" stroke="#d8dee4"/>
+    <text x="28" y="138" font-size="15" fill="#59636e">CANCELLATION REQUEST</text>
+    <text x="28" y="166" font-size="24" font-weight="600" fill="#9a2626">Not sent</text>
+    <text x="28" y="190" font-size="16">The node returns FAILURE.</text>
+    <text x="28" y="218" font-size="15" font-weight="600" fill="#9a2626">Cancellation check fails</text>
+    <rect x="12" y="252" width="336" height="190" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="28" y="283" font-size="19" font-weight="600">With the upstream fix</text>
+    <path d="M28 298H332" stroke="#d8dee4"/>
+    <text x="28" y="322" font-size="15" fill="#59636e">CANCELLATION REQUEST</text>
+    <text x="28" y="350" font-size="24" font-weight="600" fill="#116329">Sent</text>
+    <text x="28" y="374" font-size="16">The node waits for the</text>
+    <text x="28" y="394" font-size="16">cancellation response.</text>
+    <text x="28" y="424" font-size="15" font-weight="600" fill="#116329">Cancellation check passes</text>
+    <text x="20" y="470" font-size="15" fill="#59636e">Server acknowledgment and</text>
+    <text x="20" y="492" font-size="15" fill="#59636e">goal termination remain unknown.</text>
+  </g>
+</svg>

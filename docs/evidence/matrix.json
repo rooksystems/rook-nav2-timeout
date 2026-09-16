@@ -1,0 +1,404 @@
+[
+  {
+    "scenario": "timeout",
+    "variant": "fixed",
+    "exit": 0,
+    "result": {
+      "completion_ordinal": 18,
+      "detail": "Goal submitted, ROS deadline observed expired, valid wildcard cancel issued; reply and termination unavailable.",
+      "predicate": "cancel_request_issued",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "pass",
+      "schema": "rook-property-result@1",
+      "unavailable": [
+        "cancel_acknowledged",
+        "goal_terminated"
+      ]
+    }
+  },
+  {
+    "scenario": "timeout",
+    "variant": "old",
+    "exit": 1,
+    "result": {
+      "detail": "cancel_request_issued",
+      "ordinal": 18,
+      "predicate": "cancel_request_issued",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "timeout",
+    "variant": "noop",
+    "exit": 1,
+    "result": {
+      "detail": "goal_submitted",
+      "ordinal": 2,
+      "predicate": "goal_submitted",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "timeout",
+    "variant": "always-cancel",
+    "exit": 1,
+    "result": {
+      "detail": "cancel_after_deadline_expiry",
+      "ordinal": 3,
+      "predicate": "cancel_after_deadline_expiry",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "timely",
+    "variant": "fixed",
+    "exit": 0,
+    "result": {
+      "completion_ordinal": 14,
+      "detail": "Goal acknowledged and processed before the deadline; completed scheduled ticks through 30 ms without cancellation.",
+      "predicate": "observation_interval_elapsed",
+      "property": "nav2-timely-ack-no-cancel@1",
+      "result": "pass",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "timely",
+    "variant": "old",
+    "exit": 0,
+    "result": {
+      "completion_ordinal": 14,
+      "detail": "Goal acknowledged and processed before the deadline; completed scheduled ticks through 30 ms without cancellation.",
+      "predicate": "observation_interval_elapsed",
+      "property": "nav2-timely-ack-no-cancel@1",
+      "result": "pass",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "timely",
+    "variant": "noop",
+    "exit": 1,
+    "result": {
+      "detail": "goal_submitted",
+      "ordinal": 2,
+      "predicate": "goal_submitted",
+      "property": "nav2-timely-ack-no-cancel@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "timely",
+    "variant": "always-cancel",
+    "exit": 1,
+    "result": {
+      "detail": "no_cancel_in_interval",
+      "ordinal": 3,
+      "predicate": "no_cancel_in_interval",
+      "property": "nav2-timely-ack-no-cancel@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "missing-clock",
+    "variant": "fixed",
+    "exit": 3,
+    "result": {
+      "detail": "send_time_observed",
+      "missing": "ROS read after actual goal submission",
+      "ordinal": 3,
+      "predicate": "send_time_observed",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "inconclusive",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "missing-clock",
+    "variant": "old",
+    "exit": 3,
+    "result": {
+      "detail": "send_time_observed",
+      "missing": "ROS read after actual goal submission",
+      "ordinal": 3,
+      "predicate": "send_time_observed",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "inconclusive",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "missing-clock",
+    "variant": "noop",
+    "exit": 1,
+    "result": {
+      "detail": "goal_submitted",
+      "ordinal": 2,
+      "predicate": "goal_submitted",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "missing-clock",
+    "variant": "always-cancel",
+    "exit": 1,
+    "result": {
+      "detail": "cancel_after_deadline_expiry",
+      "ordinal": 3,
+      "predicate": "cancel_after_deadline_expiry",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "frozen-clock",
+    "variant": "fixed",
+    "exit": 3,
+    "result": {
+      "detail": "deadline_expired",
+      "missing": "ROS observation at or beyond goal-response deadline",
+      "predicate": "deadline_expired",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "inconclusive",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "frozen-clock",
+    "variant": "old",
+    "exit": 3,
+    "result": {
+      "detail": "deadline_expired",
+      "missing": "ROS observation at or beyond goal-response deadline",
+      "predicate": "deadline_expired",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "inconclusive",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "frozen-clock",
+    "variant": "noop",
+    "exit": 1,
+    "result": {
+      "detail": "goal_submitted",
+      "ordinal": 2,
+      "predicate": "goal_submitted",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "frozen-clock",
+    "variant": "always-cancel",
+    "exit": 1,
+    "result": {
+      "detail": "cancel_after_deadline_expiry",
+      "ordinal": 3,
+      "predicate": "cancel_after_deadline_expiry",
+      "property": "nav2-goal-response-timeout-cancel@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "overlap",
+    "variant": "fixed",
+    "exit": 0,
+    "result": {
+      "completion_ordinal": 26,
+      "detail": "Two goals retained distinct identities; stale results left the class running and the matching result completed it.",
+      "predicate": "matching_result_processed",
+      "property": "nav2-overlap-results@1",
+      "result": "pass",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "overlap",
+    "variant": "old",
+    "exit": 0,
+    "result": {
+      "completion_ordinal": 26,
+      "detail": "Two goals retained distinct identities; stale results left the class running and the matching result completed it.",
+      "predicate": "matching_result_processed",
+      "property": "nav2-overlap-results@1",
+      "result": "pass",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "overlap",
+    "variant": "noop",
+    "exit": 1,
+    "result": {
+      "detail": "goal_submitted",
+      "ordinal": 2,
+      "predicate": "goal_submitted",
+      "property": "nav2-overlap-results@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "overlap",
+    "variant": "always-cancel",
+    "exit": 1,
+    "result": {
+      "detail": "no_cancel_in_interval",
+      "ordinal": 3,
+      "predicate": "no_cancel_in_interval",
+      "property": "nav2-overlap-results@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "wrong-result",
+    "variant": "old",
+    "exit": 3,
+    "result": {
+      "detail": "matching_result_processed",
+      "missing": "stale result observations and a processed matching result",
+      "predicate": "matching_result_processed",
+      "property": "nav2-overlap-results@1",
+      "result": "inconclusive",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "cancel-ack",
+    "variant": "fixed",
+    "exit": 0,
+    "result": {
+      "completion_ordinal": 14,
+      "detail": "cancel_acknowledged",
+      "predicate": "cancel_acknowledged",
+      "property": "nav2-cancel-ack@1",
+      "result": "pass",
+      "schema": "rook-property-result@1",
+      "unavailable": [
+        "goal_terminated"
+      ]
+    }
+  },
+  {
+    "scenario": "cancel-ack",
+    "variant": "old",
+    "exit": 0,
+    "result": {
+      "completion_ordinal": 14,
+      "detail": "cancel_acknowledged",
+      "predicate": "cancel_acknowledged",
+      "property": "nav2-cancel-ack@1",
+      "result": "pass",
+      "schema": "rook-property-result@1",
+      "unavailable": [
+        "goal_terminated"
+      ]
+    }
+  },
+  {
+    "scenario": "cancel-ack",
+    "variant": "noop",
+    "exit": 1,
+    "result": {
+      "detail": "goal_submitted",
+      "ordinal": 2,
+      "predicate": "goal_submitted",
+      "property": "nav2-cancel-ack@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "cancel-before-goal",
+    "variant": "fixed",
+    "exit": 3,
+    "result": {
+      "detail": "A client request cannot establish server ordering or goal termination.",
+      "missing": "eligible server processing order, cancellation acknowledgment and terminal result",
+      "ordinal": 18,
+      "predicate": "goal_terminated",
+      "property": "nav2-goal-termination@1",
+      "result": "inconclusive",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "cancel-before-goal",
+    "variant": "old",
+    "exit": 1,
+    "result": {
+      "detail": "cancel_request_issued",
+      "ordinal": 18,
+      "predicate": "cancel_request_issued",
+      "property": "nav2-goal-termination@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "cancel-before-goal",
+    "variant": "noop",
+    "exit": 1,
+    "result": {
+      "detail": "goal_submitted",
+      "ordinal": 2,
+      "predicate": "goal_submitted",
+      "property": "nav2-goal-termination@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  },
+  {
+    "scenario": "cancel-before-goal",
+    "variant": "always-cancel",
+    "exit": 1,
+    "result": {
+      "detail": "cancel_after_deadline_expiry",
+      "ordinal": 3,
+      "predicate": "cancel_after_deadline_expiry",
+      "property": "nav2-goal-termination@1",
+      "result": "fail",
+      "schema": "rook-property-result@1",
+      "unavailable": []
+    }
+  }
+]

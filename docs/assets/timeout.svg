@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="340" viewBox="0 0 960 340" role="img" aria-labelledby="title desc">
+  <title id="title">The cancellation request added by the Nav2 fix</title>
+  <desc id="desc">Both builds submit a goal. At 20 milliseconds of scripted ROS time, no acknowledgment has arrived. The old build returns FAILURE without a cancellation request. The fixed build sends a cancellation request and waits for the response. The cancellation check fails for the old build and passes for the fixed build. Server acknowledgment and goal termination remain unknown.</desc>
+  <rect width="960" height="340" rx="12" fill="#f6f8fa"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#1f2328">
+    <text x="480" y="32" text-anchor="middle" font-size="15" font-weight="600">A goal is submitted; no acknowledgment arrives by the 20 ms deadline.</text>
+    <text x="480" y="54" text-anchor="middle" font-size="13" fill="#59636e">Scripted ROS time, using the old and fixed Nav2 class</text>
+    <path d="M480 65V79H248V94 M480 79H712V94" stroke="#8c959f" stroke-width="1.5" fill="none"/>
+    <path d="M244 89L248 95L252 89 M708 89L712 95L716 89" stroke="#8c959f" stroke-width="1.5" fill="none"/>
+    <rect x="28" y="98" width="438" height="190" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+    <rect x="494" y="98" width="438" height="190" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="50" y="131" font-size="17" font-weight="600">Before the fix</text>
+    <text x="516" y="131" font-size="17" font-weight="600">With the upstream fix</text>
+    <path d="M50 147H444 M516 147H910" stroke="#d8dee4"/>
+    <g font-size="13" fill="#59636e">
+      <text x="50" y="174">CANCELLATION REQUEST</text>
+      <text x="516" y="174">CANCELLATION REQUEST</text>
+    </g>
+    <text x="50" y="204" font-size="23" font-weight="600" fill="#9a2626">Not sent</text>
+    <text x="516" y="204" font-size="23" font-weight="600" fill="#116329">Sent</text>
+    <text x="50" y="230" font-size="14">The node returns FAILURE.</text>
+    <text x="516" y="230" font-size="14">The node waits for the cancellation response.</text>
+    <rect x="50" y="247" width="394" height="25" rx="4" fill="#fff1f0"/>
+    <rect x="516" y="247" width="394" height="25" rx="4" fill="#eaf5ed"/>
+    <text x="62" y="265" font-size="13" font-weight="600" fill="#9a2626">Cancellation check fails</text>
+    <text x="528" y="265" font-size="13" font-weight="600" fill="#116329">Cancellation check passes</text>
+    <text x="480" y="318" text-anchor="middle" font-size="13" fill="#59636e">This checks the client request. Server acknowledgment and goal termination remain unknown.</text>
+  </g>
+</svg>
