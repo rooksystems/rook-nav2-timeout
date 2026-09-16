@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="680" viewBox="0 0 360 680" role="img" aria-labelledby="title desc">
+<title id="title">The missing Nav2 cancellation request</title>
+<desc id="desc">Both builds submit a goal. With no acknowledgment at 20 milliseconds of scripted ROS time, event 18 differs. The old build returns FAILURE without cancellation and fails the check. The fixed build emits CancelSend and passes the check; its cancellation response is still pending. Baseline effects were reproduced on the tested Linux build. Server acknowledgment and goal termination remain unknown.</desc>
+<style>
+  .paper { fill: #fafaf7; } .ink { fill: #1b1a17; } .body { fill: #4a4842; }
+  .muted { fill: #6e6b62; } .accent { fill: #d93f00; } .cell { fill: #ff4f00; }
+  .rule { stroke: #e0ddd3; } .trace { stroke: #a29e93; }
+  @media (prefers-color-scheme: dark) {
+    .paper { fill: #121214; } .ink { fill: #eceae4; } .body { fill: #bab6ad; }
+    .muted { fill: #949089; } .accent, .cell { fill: #ff7648; }
+    .rule { stroke: #2a2a2c; } .trace { stroke: #6b6963; }
+  }
+</style>
+<rect class="paper" width="360" height="680"/>
+<text x="22" y="30" font-family="Geist Mono" font-size="12" class="muted" letter-spacing="0.5">ROOK / NAV2 EXPERIMENT</text>
+<text x="22" y="76" font-family="Instrument Serif" font-size="37" class="ink">The missing</text>
+<text x="22" y="116" font-family="Instrument Serif" font-size="37" class="ink">cancellation request.</text>
+<text x="22" y="153" font-family="Instrument Sans" font-size="15" class="body">A goal is submitted. No acknowledgment</text>
+<text x="22" y="175" font-family="Instrument Sans" font-size="15" class="body">arrives by 20 ms of scripted ROS time.</text>
+<path d="M22 201H338" class="rule" fill="none" stroke-width="1"/>
+<text x="22" y="228" font-family="Geist Mono" font-size="12" class="muted">MEASURED · SCRIPTED INPUTS</text>
+<text x="22" y="264" font-family="Instrument Serif" font-size="29" class="ink">Original build</text>
+<path d="M31 288V311H53" class="trace" fill="none" stroke-width="1"/>
+<rect x="28.0" y="284.0" width="6" height="6" rx="1.68" class="muted"/>
+<rect x="52.0" y="306.0" width="10" height="10" rx="2.8" class="ink"/>
+<text x="75" y="317" font-family="Geist Mono" font-size="22" class="ink">Status</text>
+<text x="22" y="348" font-family="Instrument Sans" font-size="16" class="body">Returns FAILURE.</text>
+<text x="22" y="369" font-family="Instrument Sans" font-size="16" class="body">No cancellation request.</text>
+<text x="22" y="393" font-family="Geist Mono" font-size="12" class="muted">CANCEL CHECK</text>
+<text x="282" y="393" font-family="Geist Mono" font-size="14" class="ink">FAIL</text>
+<text x="22" y="448" font-family="Instrument Serif" font-size="29" class="ink">Fixed build</text>
+<path d="M31 472V495H53" class="trace" fill="none" stroke-width="1"/>
+<rect x="28.0" y="468.0" width="6" height="6" rx="1.68" class="muted"/>
+<rect x="52.0" y="490.0" width="10" height="10" rx="2.8" class="cell"/>
+<text x="75" y="501" font-family="Geist Mono" font-size="22" class="accent">CancelSend</text>
+<text x="22" y="532" font-family="Instrument Sans" font-size="16" class="body">Waits for the cancellation</text>
+<text x="22" y="553" font-family="Instrument Sans" font-size="16" class="body">response.</text>
+<text x="22" y="577" font-family="Geist Mono" font-size="12" class="muted">CANCEL CHECK</text>
+<text x="282" y="577" font-family="Geist Mono" font-size="14" class="accent">PASS</text>
+<path d="M22 602H338" class="rule" fill="none" stroke-width="1"/>
+<text x="22" y="628" font-family="Geist Mono" font-size="12" class="muted">Baseline reproduced · Linux x86_64</text>
+<text x="22" y="651" font-family="Instrument Sans" font-size="14" class="muted">Server acknowledgment and goal</text>
+<text x="22" y="670" font-family="Instrument Sans" font-size="14" class="muted">termination remain unknown.</text>
+</svg>

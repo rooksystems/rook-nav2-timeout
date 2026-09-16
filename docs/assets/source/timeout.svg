@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="490" viewBox="0 0 960 490" role="img" aria-labelledby="title desc">
+<title id="title">The missing Nav2 cancellation request</title>
+<desc id="desc">Both builds submit a goal. With no acknowledgment at 20 milliseconds of scripted ROS time, event 18 differs. The old build returns FAILURE without cancellation and fails the check. The fixed build emits CancelSend and passes the check; its cancellation response is still pending. Baseline effects were reproduced on the tested Linux build. Server acknowledgment and goal termination remain unknown.</desc>
+<style>
+  .paper { fill: #fafaf7; } .ink { fill: #1b1a17; } .body { fill: #4a4842; }
+  .muted { fill: #6e6b62; } .accent { fill: #d93f00; } .cell { fill: #ff4f00; }
+  .rule { stroke: #e0ddd3; } .trace { stroke: #a29e93; }
+  @media (prefers-color-scheme: dark) {
+    .paper { fill: #121214; } .ink { fill: #eceae4; } .body { fill: #bab6ad; }
+    .muted { fill: #949089; } .accent, .cell { fill: #ff7648; }
+    .rule { stroke: #2a2a2c; } .trace { stroke: #6b6963; }
+  }
+</style>
+<rect class="paper" width="960" height="490"/>
+<text x="40" y="38" font-family="Geist Mono" font-size="12" class="muted" letter-spacing="1">ROOK / NAV2 EXPERIMENT</text>
+<text x="687" y="38" font-family="Geist Mono" font-size="11" class="muted">MEASURED · SCRIPTED INPUTS</text>
+<text x="40" y="99" font-family="Instrument Serif" font-size="48" class="ink">The missing cancellation request.</text>
+<text x="40" y="137" font-family="Instrument Sans" font-size="18" class="body">A goal is submitted. No acknowledgment arrives by 20 ms of scripted ROS time.</text>
+<path d="M40 166H920" class="rule" fill="none" stroke-width="1"/>
+<text x="40" y="236" font-family="Instrument Serif" font-size="27" class="ink">Original build</text>
+<text x="40" y="262" font-family="Geist Mono" font-size="12" class="muted" letter-spacing="0.5">BEFORE THE FIX</text>
+<path d="M250 245H624" class="trace" fill="none" stroke-width="1"/>
+<rect x="254.0" y="241.0" width="8" height="8" rx="2.24" class="muted"/>
+<rect x="406.0" y="241.0" width="8" height="8" rx="2.24" class="muted"/>
+<rect x="618.0" y="239.0" width="12" height="12" rx="3.36" class="ink"/>
+<text x="247" y="221" font-family="Geist Mono" font-size="13" class="muted">GoalSend</text>
+<text x="392" y="221" font-family="Geist Mono" font-size="13" class="muted">20 ms</text>
+<text x="646" y="250" font-family="Geist Mono" font-size="22" class="ink">Status</text>
+<text x="247" y="275" font-family="Geist Mono" font-size="12" class="muted">EVENT 3</text>
+<text x="392" y="275" font-family="Geist Mono" font-size="12" class="muted">EVENT 17</text>
+<text x="611" y="275" font-family="Geist Mono" font-size="12" class="muted">EVENT 18</text>
+<text x="247" y="301" font-family="Instrument Sans" font-size="16" class="body">Returns FAILURE; no cancellation.</text>
+<text x="839" y="249" font-family="Geist Mono" font-size="15" class="ink">FAIL</text>
+<text x="40" y="350" font-family="Instrument Serif" font-size="27" class="ink">Fixed build</text>
+<text x="40" y="376" font-family="Geist Mono" font-size="12" class="muted" letter-spacing="0.5">UPSTREAM #6373</text>
+<path d="M250 359H624" class="trace" fill="none" stroke-width="1"/>
+<rect x="254.0" y="355.0" width="8" height="8" rx="2.24" class="muted"/>
+<rect x="406.0" y="355.0" width="8" height="8" rx="2.24" class="muted"/>
+<rect x="618.0" y="353.0" width="12" height="12" rx="3.36" class="cell"/>
+<text x="247" y="335" font-family="Geist Mono" font-size="13" class="muted">GoalSend</text>
+<text x="392" y="335" font-family="Geist Mono" font-size="13" class="muted">20 ms</text>
+<text x="646" y="364" font-family="Geist Mono" font-size="22" class="accent">CancelSend</text>
+<text x="247" y="389" font-family="Geist Mono" font-size="12" class="muted">EVENT 3</text>
+<text x="392" y="389" font-family="Geist Mono" font-size="12" class="muted">EVENT 17</text>
+<text x="611" y="389" font-family="Geist Mono" font-size="12" class="muted">EVENT 18</text>
+<text x="247" y="415" font-family="Instrument Sans" font-size="16" class="body">Waits for the cancellation response.</text>
+<text x="839" y="363" font-family="Geist Mono" font-size="15" class="accent">PASS</text>
+<text x="805" y="194" font-family="Geist Mono" font-size="12" class="muted">CANCEL CHECK</text>
+<path d="M40 427H920" class="rule" fill="none" stroke-width="1"/>
+<text x="40" y="454" font-family="Geist Mono" font-size="12" class="muted">Baseline reproduced · Linux x86_64 · Recorded CI run, 16 Sep 2026</text>
+<text x="40" y="476" font-family="Instrument Sans" font-size="14" class="muted">Server acknowledgment and goal termination remain unknown.</text>
+</svg>
