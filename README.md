@@ -5,7 +5,7 @@ A Nav2 behavior-tree node could return `FAILURE` after a goal acknowledgment tim
 This example uses Rook to capture the old component's behavior, reproduce it, and check the upstream fix against the same inputs. Both versions execute Nav2's `BtActionNode`, with controlled clock readings and action callbacks.
 
 <picture>
-  <source media="(max-width: 600px)" srcset="docs/assets/timeout-mobile.svg">
+  <source media="(max-width: 767px)" srcset="docs/assets/timeout-mobile.svg">
   <img src="docs/assets/timeout.svg" alt="Recorded timeout result. With no goal acknowledgment at 20 ms of scripted ROS time, the old build returns FAILURE without cancellation; the fixed build sends a cancellation request. Server acknowledgment and goal termination are outside this check.">
 </picture>
 
